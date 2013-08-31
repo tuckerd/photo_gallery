@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  when_taken: 2013-08-30
+  caption: MyString
+  description: MyText
+
+two:
+  when_taken: 2013-08-30
+  caption: MyString
+  description: MyText

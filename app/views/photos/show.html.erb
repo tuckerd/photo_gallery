@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>When taken:</b>
+  <%= @photo.when_taken %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%= @photo.caption %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @photo.description %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo), class: "button tiny round" %>
+<%= link_to 'Back', photos_path, class: "button tiny round"%>
+<%= link_to 'Delete', @photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny round alert" %>
