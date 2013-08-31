@@ -22,8 +22,16 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'fog' #upload to cloud
 gem 'carrierwave' #photo uploads
 gem 'rmagick' #photo resizing
+
+gem 'dotenv-rails'
+
+group :development do
+  gem 'binding_of_caller' #console in better_errors
+  gem 'better_errors' #browser error display
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
