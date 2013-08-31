@@ -3,7 +3,9 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.all
-
+    @uploader = Photo.new.image
+   @uploader.success_action_redirect = new_photo_url
+#    @uploader.success_action_redirect = new_photo_url(:js)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @photos }
@@ -24,10 +26,11 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.json
   def new
-    @photo = Photo.new
+    @photo = Photo.new(key: params[:key])
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js
       format.json { render json: @photo }
     end
   end
@@ -44,7 +47,8 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+        format.html { redirect_to photos, notice: 'Photo was successfully created.' }
+        format.js
         format.json { render json: @photo, status: :created, location: @photo }
       else
         format.html { render action: "new" }
@@ -76,7 +80,7 @@ class PhotosController < ApplicationController
     @photo.destroy
 
     respond_to do |format|
-      format.html { redirect_to photos_url }
+      format.html { redirect_to photos }
       format.json { head :no_content }
     end
   end
