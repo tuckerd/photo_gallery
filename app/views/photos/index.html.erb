@@ -6,7 +6,9 @@
 </div>
 <div class="row">
   <div class="large-12 columns">
-    <%= link_to 'New Photo', new_photo_path, class: "button small round" %>
+    <%#= link_to 'New Photo', new_photo_path, class: "button small round" %>
+
+    <a href="#" data-reveal-id="new_image_modal" class= "button round small">New Image</a>
   </div>
 </div>
 <div class="row">
@@ -22,4 +24,21 @@
     </div>
   <% end %>
 </div>
+
+<div id="new_image_modal" class="reveal-modal">
+  <h3>Upload New File</h3>
+  <hr>
+  <%= direct_upload_form_for @uploader do |f| %>
+    <%= f.file_field :image, class: "button round small" %>
+    <%= f.submit "Upload Image",  class: "button round small success" %>
+    <%#= f.submit "Upload Image",  class: "button round small success", remote: true %>
+    <button data-reveal-id="myModal" data-reveal-ajax="http://some-url">
+    Click Me For A Modal
+    </button>
+</a>
+  <% end %>
+  <p class="lead">Your couch.  It is mine.</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
 

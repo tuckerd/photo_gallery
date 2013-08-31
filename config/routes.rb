@@ -1,7 +1,10 @@
+require 'sidekiq/web'
+
 PhotoGallery::Application.routes.draw do
   root to: "photos#index"
   resources :photos
 
+  mount Sidekiq::Web, at: "/sidekiq"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

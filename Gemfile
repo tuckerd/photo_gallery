@@ -22,17 +22,24 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 gem 'fog' #upload to cloud
 gem 'carrierwave' #photo uploads
+gem 'carrierwave_direct' #photo uploads direct from client side
 gem 'rmagick' #photo resizing
 
-gem 'dotenv-rails'
+gem 'sidekiq' #background jobs for photo upload
+gem 'sinatra', require: false #see web interface for sidekiq
+gem 'slim' #see web interface for sidekiq
 
 group :development do
   gem 'binding_of_caller' #console in better_errors
   gem 'better_errors' #browser error display
 end
 
+group :development, :test do
+  gem 'dotenv-rails' #set up environment variables for dev and test
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
