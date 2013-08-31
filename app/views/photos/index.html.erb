@@ -12,7 +12,8 @@
 <div class="row">
   <% @photos.each do |photo| %>
     <div class="large-4 small-6 columns">
-      <%= link_to image_tag("http://placehold.it/500x500&text=Thumbnail"), photo %>
+      <%= link_to image_tag(photo.image.url(:thumb).to_s), photo %>
+      <%#= link_to image_tag("http://placehold.it/500x500&text=Thumbnail"), photo %>
       <div class="panel">
         <p><%= photo.caption %><br/>
         <small><%= photo.when_taken %></small><br/>
