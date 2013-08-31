@@ -1,20 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <h3><%= @photo.caption %></h3>
+    <hr>
+  </div>
+</div>
 
-<p>
-  <b>When taken:</b>
-  <%= @photo.when_taken %>
-</p>
+<div class="row">
+    <div class="large-12 columns">
+      <%= image_tag @photo.image.url.to_s %>
+      <div class="panel">
+        <%= @photo.when_taken %><br/>
+        <%= @photo.description %></p>
+      </div>
+    </div>
+</div>
 
-<p>
-  <b>Caption:</b>
-  <%= @photo.caption %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @photo.description %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo), class: "button tiny round" %>
-<%= link_to 'Back', photos_path, class: "button tiny round"%>
-<%= link_to 'Delete', @photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny round alert" %>
+<div class="row">
+  <div class="large-12 columns">
+    <%= link_to 'Edit', edit_photo_path(@photo), class: "button tiny round" %>
+    <%= link_to 'Back', photos_path, class: "button tiny round"%>
+    <%= link_to 'Delete', @photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny round alert" %>
+  </div>
+</div>
