@@ -10,6 +10,7 @@ gem 'rails', '3.2.13'
 group :production do
   gem 'pg'
   gem 'unicorn'
+  gem 'redis'
 end
 
   gem 'sass-rails',   '~> 3.2.6' #moved out per http://stackoverflow.com/questions/9933514/activeadmin-heroku-stylesheet-config-issue-with-partial-fix
