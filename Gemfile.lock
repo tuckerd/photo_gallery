@@ -184,7 +184,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.13)
   rmagick
-  sass-rails (~> 3.2.3)
+  sass-rails (~> 3.2.6)
   sidekiq
   sinatra
   slim
