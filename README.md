@@ -41,7 +41,7 @@ You will need an Amazon S3 bucket:
 - View [documentation](http://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html) for setting up bucket.
 - When you are done with creating a bucket put the key id, access key, and bucket name in a .env file.  .env_example has been provided for you.  Rename this file to .env and replace your information with the dummy variables on the first three lines
 
-Redis is required for Sidekiq background jobs so should be installed. Check out [Railscast #366](http://railscasts.com/episodes/366-sidekiq) to see it in action and see example setup.
+Redis is required for Sidekiq background jobs so should be installed. Check out [Railscast #366](http://railscasts.com/episodes/366-sidekiq) to see it in action and see example setup. Then do `bundle exec sidekiq` to get the background workers going.
 
 
 ## Contributing

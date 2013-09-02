@@ -78,9 +78,10 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
+    @photo.remove_image!
 
     respond_to do |format|
-      format.html { redirect_to photos }
+      format.html { redirect_to photos_path }
       format.json { head :no_content }
     end
   end
